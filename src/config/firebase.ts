@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBingpRp52rrh62hUG_7nWc5PEEmC-K5s8",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "dragnview-ddd00.firebaseapp.com",
   projectId: "dragnview-ddd00",
   storageBucket: "dragnview-ddd00.appspot.com",
