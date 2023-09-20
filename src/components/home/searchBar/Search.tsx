@@ -33,11 +33,11 @@ const Search = ({
   };
 
   return (
-    <div className="container">
+    <div className="container search__container">
       <input
         onChange={(e) => handleInputChange(e)}
         type="search"
-        placeholder="Search images by tags eg the task above"
+        placeholder="Search images by tags eg the tags above"
         value={searchQuery}
       />
     </div>

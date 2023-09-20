@@ -7,6 +7,12 @@
     margin: 0 auto;
 }
 
+.imageGallery__main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .image__item {
     position: relative;
     flex-direction: column;

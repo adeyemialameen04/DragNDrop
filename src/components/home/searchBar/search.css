@@ -1,0 +1,9 @@
+.search__container input {
+    height: 45px;
+    padding-left: 10px;
+    outline: none;
+    border: 1px solid hsl(247, 82%, 66%);
+    /* width: 290px; */
+    max-width: 70%;
+    width: 70%;
+}

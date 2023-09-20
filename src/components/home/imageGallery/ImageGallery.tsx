@@ -76,6 +76,7 @@ type ImageGalleryProps = {
 const ImageGallery = ({ selectedTag, clearTag }: ImageGalleryProps) => {
   const [searchQuery, setSearchQuery] = useState(""); // Step 1: Create state for searchQuery
   const [isLoading, setIsLoading] = useState(true);
+  const [noResults, setNoResults] = useState(false);
   const filteredImages = imagesData.filter(
     (image) => image.tag === selectedTag
   );
@@ -155,6 +156,11 @@ const ImageGallery = ({ selectedTag, clearTag }: ImageGalleryProps) => {
 
   const handleSearch = (searchResults: imageData[]) => {
     setTryImages(searchResults);
+    if (searchResults.length === 0) {
+      setNoResults(true);
+    } else {
+      setNoResults(false);
+    }
   };
 
   return (
@@ -166,6 +172,7 @@ const ImageGallery = ({ selectedTag, clearTag }: ImageGalleryProps) => {
         clearTag={clearTag}
         images={imagesData}
       />
+      <>{noResults && <p>No tag was found</p>}</>
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
