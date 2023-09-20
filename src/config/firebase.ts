@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth"
 const apiKey = import.meta.env.VITE_REACT_APP_FIREBASE_API_KEY
 
 const firebaseConfig = {
-  apiKey: apiKey,
+  apiKey: apiKey ?? "AIzaSyBingpRp52rrh62hUG_7nWc5PEEmC-K5s8",
   authDomain: "dragnview-ddd00.firebaseapp.com",
   projectId: "dragnview-ddd00",
   storageBucket: "dragnview-ddd00.appspot.com",
