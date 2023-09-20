@@ -2,6 +2,7 @@ import { useState } from "react";
 import { auth } from "../../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import toast from "react-hot-toast";
+import Password from "./Password";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -50,16 +51,9 @@ const Login = () => {
             type="email"
             placeholder="Type your email here ..."
           />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            placeholder="Password"
-          />
+          <Password password={password} setPassword={setPassword} />
           <button disabled={loading || !password} type="submit">
-            {loading ? "Loading" : "Log In"}
+            {loading ? "Loading ..." : "Log In"}
           </button>
         </form>
       </div>

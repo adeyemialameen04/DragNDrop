@@ -15,3 +15,9 @@
     padding-block: .3rem;
     padding-inline: .6rem;
 }
+
+.activeTag {
+    background-color: hsl(247, 82%, 66%) !important;
+    color: #fff !important;
+    /* display: none; */
+}

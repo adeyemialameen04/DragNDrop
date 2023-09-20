@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { auth } from "../../config/firebase";
 import toast from "react-hot-toast";
 import "./auth.css";
+import Password from "./Password";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -83,7 +84,7 @@ const SignUp = () => {
     <main className="auth__main">
       <div className="container auth__container">
         <h1>Welcome DragNview</h1>
-        <h1>Signup</h1>
+        <p>Signup</p>
         <form onSubmit={handleAuth}>
           <input
             value={email}
@@ -94,17 +95,9 @@ const SignUp = () => {
             type="email"
             placeholder="Type your email here ..."
           />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-              clearErrorMessage();
-            }}
-            placeholder="Password"
-          />
+          <Password password={password} setPassword={setPassword} />
           <button disabled={loading || !password} type="submit">
-            {loading ? "Loading" : "Signup"}
+            {loading ? "Loading ..." : "Signup"}
           </button>
         </form>
         <>{errorMessage && <p>{errorMessage}</p>}</>

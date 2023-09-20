@@ -33,18 +33,33 @@
 
 .auth__container button {
     box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
-    background-color: var(--clr-purple);
+    background-color: hsl(247, 82%, 66%);
+    color: #fff;
     display: grid;
     place-content: center;
     height: 35px;
     border: 1px solid transparent;
     font-size: 0.9rem;
-    color: var(--clr-white);
     text-decoration: none;
     max-width: 12.5rem;
     align-self: flex-end;
     padding-inline: 1rem;
     cursor: pointer;
+}
+
+.password__container {
+    position: relative;
+}
+
+.eye {
+    position: absolute;
+    top: 8px;
+    right: 3%;
+    font-size: 1.5rem;
+}
+
+.password__container input {
+    width: 100%;
 }
 
 .tabs {
@@ -55,6 +70,7 @@
     gap: 1rem;
 }
 
+
 .tabs button {
     height: 50px;
     border-radius: 100vh;
@@ -63,6 +79,12 @@
     color: #fff;
     font-size: 1.1rem;
     border: none;
+}
+
+.active {
+    border: 1px solid #1f5a90 !important;
+    background-color: transparent !important;
+    color: hsl(247, 82%, 66%) !important;
 }
 
 @media (min-width:780px) {

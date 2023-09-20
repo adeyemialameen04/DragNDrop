@@ -30,7 +30,12 @@ const Tags = ({ selectedTag, handleTagClick, clearTag }: TagsProps) => {
   return (
     <aside>
       <div className="container tags__container">
-        <button onClick={clearTag}>All</button>
+        <button
+          className={selectedTag === "" ? "activeTag" : ""}
+          onClick={clearTag}
+        >
+          All
+        </button>
         {tags.map((tag) => (
           <TagItem
             key={tag.id}

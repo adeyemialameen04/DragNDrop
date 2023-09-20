@@ -1,6 +1,6 @@
-# DragNview
+# DragNdrop
 
-MovieBox is a web application built with Reactjs and TypeScript that allows users to discover images, rearrange them it also has a search feature
+DragNdrop is a web application built with Reactjs and TypeScript that allows users to discover images, rearrange them it also has a search feature
 
 ![DranNview Screenshot](./public/screenshot.png)
 
