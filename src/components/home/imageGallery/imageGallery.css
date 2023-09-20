@@ -23,9 +23,6 @@
 
 .image__item p {
     font-size: 0.875rem;
-    --blue: #1f5a90;
-    --dark-blue: #0a4b88;
-    --light-blue: #5390c9;
     --clr-gray: #eee;
     background-color: hsl(247, 82%, 66%);
     top: 10px;

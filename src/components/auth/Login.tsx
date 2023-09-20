@@ -13,6 +13,7 @@ const Login = () => {
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      toast.success("Successfully signed in");
       // If successful, user is logged in
     } catch (error: any) {
       // Handle different error codes using a switch case
