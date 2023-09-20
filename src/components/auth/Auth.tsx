@@ -3,7 +3,7 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import "./auth.css";
 const Auth = () => {
-  const [tab, setTab] = useState("sigin");
+  const [tab, setTab] = useState("signup");
 
   const toggleTab = (selectedTab: string) => {
     setTab(selectedTab);
