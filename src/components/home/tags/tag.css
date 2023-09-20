@@ -1,7 +1,7 @@
 .tags__container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
     padding-block: 1rem;
     margin-bottom: 1rem;
 }
