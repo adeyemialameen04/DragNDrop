@@ -23,7 +23,7 @@ const Home = () => {
         clearTag={clearTag}
         handleTagClick={handleTagClick}
       />
-      <ImageGallery selectedTag={selectedTag} />
+      <ImageGallery clearTag={clearTag} selectedTag={selectedTag} />
     </main>
   );
 };
