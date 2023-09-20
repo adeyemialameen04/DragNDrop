@@ -19,6 +19,8 @@ import {
   sortableKeyboardCoordinates,
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
+import Search from "../searchBar/Search";
+import { imageData } from "../../../utils/interfaces";
 
 type ImageItemProps = {
   path: string;
@@ -68,9 +70,11 @@ const ImageItem = ({ path, tag, index, isDraggable }: ImageItemProps) => {
 
 type ImageGalleryProps = {
   selectedTag: string;
+  clearTag: () => void;
 };
 
-const ImageGallery = ({ selectedTag }: ImageGalleryProps) => {
+const ImageGallery = ({ selectedTag, clearTag }: ImageGalleryProps) => {
+  const [searchQuery, setSearchQuery] = useState(""); // Step 1: Create state for searchQuery
   const [isLoading, setIsLoading] = useState(true);
   const filteredImages = imagesData.filter(
     (image) => image.tag === selectedTag
@@ -121,7 +125,6 @@ const ImageGallery = ({ selectedTag }: ImageGalleryProps) => {
   };
 
   useEffect(() => {
-    // console.log(filteredImages);
     if (selectedTag === "") {
       setTryImages(imagesData);
     } else {
@@ -150,8 +153,19 @@ const ImageGallery = ({ selectedTag }: ImageGalleryProps) => {
     setTryImages(imagesCopy);
   };
 
+  const handleSearch = (searchResults: imageData[]) => {
+    setTryImages(searchResults);
+  };
+
   return (
     <main className="imageGallery__main">
+      <Search
+        onSearch={handleSearch}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        clearTag={clearTag}
+        images={imagesData}
+      />
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
